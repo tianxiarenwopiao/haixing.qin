@@ -15,7 +15,7 @@ import pickle
 import os
 
 import requests
-url = 'https://gitee.com/qin-haixing/sailun-group/tree/master/model 1.dat'
+url = 'https://gitee.com/qin-haixing/sailun-group/tree/master/model.dat'
 r=requests.get(url)
 with open('rr1.dat','wb') as f:
     f.write(r.content)
