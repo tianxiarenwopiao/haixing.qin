@@ -1,0 +1,6 @@
+pillow
+streamlit
+pandas
+numpy
+requests
+scikit-learn==1.2.1
