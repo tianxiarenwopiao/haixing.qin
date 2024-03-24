@@ -42,8 +42,8 @@ input_data=pd.DataFrame()
 output_data=pd.DataFrame()
 df=pd.DataFrame()
 
-RMSE=0.37  #
-RSQ=0.990 #
+rmse=0.37  #
+rsq=0.990 #
 
 with row1[0]:
     with st.container():
