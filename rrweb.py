@@ -15,8 +15,8 @@ import pickle
 import os
 
 import requests
-#url = 'https://gitee.com/zijiexu/work/raw/master/rrmodel.dat'
-url = 'https://gitee.com/qin-haixing/sailun-group/tree/master/model.dat'
+url = 'https://gitee.com/zijiexu/work/raw/master/rrmodel.dat'
+#url = 'https://gitee.com/qin-haixing/sailun-group/tree/master/model.dat'
 r=requests.get(url)
 with open('rr1.dat','wb') as f:
     f.write(r.content)
@@ -25,13 +25,13 @@ current_dir = os.getcwd()
 full_path = os.path.join(current_dir, 'rr1.dat')
 
 load_model=pickle.load(open(full_path,"rb"))
-#url1 = 'https://gitee.com/zijiexu/work/raw/master/2.jpg'
-url1 = 'https://gitee.com/qin-haixing/sailun-group/tree/master/Figure_1.png'
+url1 = 'https://gitee.com/zijiexu/work/raw/master/2.jpg'
+#url1 = 'https://gitee.com/qin-haixing/sailun-group/tree/master/Figure_1.png'
 r1=requests.get(url1)
-with open('rr.png','wb') as f1:
+with open('rr.jpg','wb') as f1:
     f1.write(r1.content)
   #  f.close
-full_path1 = os.path.join(current_dir, 'rr.png')
+full_path1 = os.path.join(current_dir, 'rr.jpg')
 
 
 st.title("Tire RR Values Prediction")
@@ -42,8 +42,8 @@ input_data=pd.DataFrame()
 output_data=pd.DataFrame()
 df=pd.DataFrame()
 
-rmse=0.37  #
-rsq=0.990 #
+RMSE=0.37  #
+RSQ=0.990 #
 
 with row1[0]:
     with st.container():
