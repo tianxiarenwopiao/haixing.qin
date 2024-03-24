@@ -15,8 +15,8 @@ import pickle
 import os
 
 import requests
-url = 'https://gitee.com/zijiexu/work/raw/master/rrmodel.dat'
-#url = 'https://gitee.com/qin-haixing/sailun-group/tree/master/model.dat'
+#url = 'https://gitee.com/zijiexu/work/raw/master/rrmodel.dat'
+url = 'https://gitee.com/qin-haixing/sailun-group/tree/master/model.dat'
 r=requests.get(url)
 with open('rr1.dat','wb') as f:
     f.write(r.content)
@@ -25,8 +25,8 @@ current_dir = os.getcwd()
 full_path = os.path.join(current_dir, 'rr1.dat')
 
 load_model=pickle.load(open(full_path,"rb"))
-url1 = 'https://gitee.com/zijiexu/work/raw/master/2.jpg'
-#url1 = 'https://gitee.com/qin-haixing/sailun-group/tree/master/Figure_1.png'
+#url1 = 'https://gitee.com/zijiexu/work/raw/master/2.jpg'
+url1 = 'https://gitee.com/qin-haixing/sailun-group/tree/master/Figure_1.png'
 r1=requests.get(url1)
 with open('rr.jpg','wb') as f1:
     f1.write(r1.content)
