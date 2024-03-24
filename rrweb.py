@@ -58,8 +58,8 @@ with row1[0]:
         st.dataframe(input_data)
 with row1[1]:
     with st.container():
-        st.write('RMSE(均方根误差）：%.2f'%rmse)
-        st.write('模型测试值与预测值相关性系数R2：%.2f'%rsq)
+        st.write('RMSE(均方根误差,N/KN）：%.2f'%rmse)
+        st.write('模型测试值与预测值相关性系数R^2：%.2f'%rsq)
         if st.button('滚动阻力预测'):
             
             df = pd.DataFrame(output_data,columns=('Fx, N','RR, N/kN'))
