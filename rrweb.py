@@ -1,9 +1,9 @@
 # -*- 编码：utf-8 -*-
-”“”
+#”“”
 创建于 2024 年 1 月 11 日星期四 14:30:52
 
 @作者：zijie.xu
-”“”
+#”“”
 导入sklearn
 从sklearn.ensemble导入RandomForestRegressor  
 将streamlit导入为st
