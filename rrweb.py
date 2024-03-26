@@ -1,54 +1,54 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Jan 11 14:30:52 2024
+# -*- 编码：utf-8 -*-
+”“”
+创建于 2024 年 1 月 11 日星期四 14:30:52
 
-@author: zijie.xu
-"""
-import sklearn
-from sklearn.ensemble import RandomForestRegressor  
-import streamlit as st
-import pandas as pd
-import numpy as np
+@作者：zijie.xu
+”“”
+导入sklearn
+从sklearn.ensemble导入RandomForestRegressor  
+将streamlit导入为st
+将pandas导入为pd
+将numpy导入为np
 
-from PIL import Image
-import pickle
-import os
+从PIL导入图像
+进口泡菜
+导入操作系统
 
-import requests
+导入请求
 #url = 'https://gitee.com/zijiexu/work/raw/master/rrmodel.dat'
 url = 'https://gitee.com/qin-haixing/sailun/raw/master/model.dat'
-r=requests.get(url)
-with open('rr1.dat','wb') as f:
-    f.write(r.content)
-  #  f.close
-current_dir = os.getcwd()
-full_path = os.path.join(current_dir, 'rr1.dat')
+r=请求。获取（网址）
+将 open ( 'rr1.dat' , 'wb' ) 作为f：
+    F。写（ r.内容）
+  # f.close
+当前目录 = 操作系统。获取cwd ( )
+完整路径 = os. 小路。加入（当前目录，'rr1.dat' ）
 
-load_model=pickle.load(open(full_path,"rb"))
+load_model=pickle.load_model=泡菜。加载模型=pickle. load_model =pickle。加载（打开（完整路径，“rb”））
 #url1 = 'https://gitee.com/zijiexu/work/raw/master/2.jpg'
 url1 = 'https://gitee.com/qin-haixing/sailun/raw/master/Figure.jpg'
-r1=requests.get(url1)
-with open('rr.jpg','wb') as f1:
-    f1.write(r1.content)
-  #  f.close
-full_path1 = os.path.join(current_dir, 'rr.jpg')
+r1=请求。获取（网址1 ）
+（'rr.jpg'，'wb'）作为f1：
+    f1。写（ r1.内容）
+  # f.close
+full_path1 = 操作系统。小路。加入（当前目录，'rr.jpg'）
 
 
-st.title("Tire RR Values Prediction")
-row1 = st.columns(2)
-row2 = st.columns(2)
-row3 = st.columns(2)
-input_data=pd.DataFrame()
-output_data=pd.DataFrame()
-df=pd.DataFrame()
+英石。title  ( “轮胎RR值预测”)
+第1行 =圣。列(  2  )
+第2行 =圣。列(  2  )
+第3行 =圣。列(    2    )
+输入数据=pd.数据框(    )
+输出数据=pd.数据框(    )
+df=pd.数据框(    )
 
-rmse=0.37  #
-rsq=0.990 #
+方均根托盘= 0.3049      #
+rsq= 0.990     #
 
-with row1[0]:
-    with st.container():
-        uploaded_file = st.file_uploader("Choose a file",label_visibility="collapsed")
-        if uploaded_file is not None:  
+与行1 [   0  ]：
+    与圣。容器（）：
+        上传的文件 = st。file_uploader ( "选择一个文件" ,label_visibility= "折叠" )
+        如果uploaded_file不是 None：  ​ 
             # Can be used wherever a "file-like" object is accepted:
             input_data = pd.read_csv(uploaded_file,delimiter='	')
             inputdata=np.array(input_data)
