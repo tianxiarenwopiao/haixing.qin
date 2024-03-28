@@ -60,7 +60,7 @@ with row1[1]:
         st.write('模型测试值与预测值相关性系数R^2：%.3f'%rsq)
         if st.button('滚动阻力预测'):
             
-            df = pd.DataFrame(output_data,columns=('Fx, N','RR, N/kN'))
+            df = pd.DataFrame(output_data,columns=('RR, N','RRC, N/kN'))
     with st.container():
         st.dataframe(df)
 with row2[0]:
